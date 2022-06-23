@@ -3,6 +3,8 @@ package koreait.etc;
 import java.util.UUID;
 
 public class UUIDTest {
+// 참고 : https://ko.wikipedia.org/wiki/%EB%B2%94%EC%9A%A9_%EA%B3%A0%EC%9C%A0_%EC%8B%9D%EB%B3%84%EC%9E%90
+// 참고 : http://daplus.net/java-java%EC%97%90%EC%84%9C-uuid-%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84-%EC%83%9D%EC%84%B1%ED%95%98%EB%8A%94-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EB%B0%A9%EB%B2%95-%EB%8C%80%EC%8B%9C%EC%97%86/
 	public static void main(String[] args) {
 		String uuid;
 		
