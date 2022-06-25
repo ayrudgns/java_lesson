@@ -1,6 +1,10 @@
 package koreait.etc;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 import java.util.UUID;
+
+import com.google.common.hash.Hashing;
 
 public class UUIDTest {
 // 참고 : https://ko.wikipedia.org/wiki/%EB%B2%94%EC%9A%A9_%EA%B3%A0%EC%9C%A0_%EC%8B%9D%EB%B3%84%EC%9E%90
@@ -39,12 +43,32 @@ public class UUIDTest {
 		 *  설정한 비밀번호는 서버에서 어떻게 관리될까?
 		 *  ==> 해싱 함수(Hash function, 복호화가 안되는 함수)를 이용해서 문자열에 대한 식별값을 만들고 저장한다.
 		 *  ==> 비밀번호 1234에 대한 해싱함수 값 저장. 로그인 1234
-		 *  ==> 대표적인 해시 함수 : sha256 알고리즘
-		 *  (서버에서 직접 구현 : MessageDigest 클래스 사용)
+		 *  ==> 대표적인 해시 함수 : sha256 알고리즘 (서버에서 직접 구현 : MessageDigest 클래스 사용)
 		 *  
 		 *  암호화 : 평문 ~> 암호문, 복호화 : 암호문 ~> 평문 (공개 key와 개인 key를 이용)
 		 * 
 		 */
 		
+		// google guava 라이브러리에서 제공하는 sha256 해싱 함수 사용해보기
+		
+		String password;	// raw (평문)
+		String sha256 = Hashing.sha256()
+				.hashString("test#12", StandardCharsets.UTF_8)
+				.toString();	// sha256으로 만들어진 해싱값, 서버에 저장된 값이라고 가정
+		System.out.println("sha256의 값 : " + sha256);
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("암호를 입력하세요. >>> ");
+		String you = sc.nextLine();			// raw
+		password = Hashing.sha256().hashString(you, StandardCharsets.UTF_8)
+				.toString();
+		System.out.println("입력한 값의 sha256 값 : " + password);
+		
+		if(sha256.equals(password)) {			// 해싱값 비교
+			System.out.println("암호가 일치합니다.");
+		} else {
+			System.out.println("암호가 일치하지 않습니다.");
+		}
+
 	}
 }

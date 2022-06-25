@@ -13,5 +13,5 @@ public class MyClassX implements InterfaceA {		// 추상메소드 반드시 선언! (추상�
 		System.out.println("MyClassX methodB() " + num);
 		return 999;
 	}
-
+	
 }

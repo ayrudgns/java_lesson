@@ -50,7 +50,6 @@ public class C53_InterfaceTest {
 		// 다형성 구현의 예시
 		iAmethod(x2);
 //		iAmethod(y1);		// 오류 : 인자로 전달해야 하는 y1이 InterfaceA의 구현체가 아니기 때문이다.
-		iAmethod(z2);
 		iAmethod(x1);
 		iAmethod(z1);
 		iAmethod(z2);
