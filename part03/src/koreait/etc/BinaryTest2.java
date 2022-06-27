@@ -49,7 +49,7 @@ public class BinaryTest2 {
  *  <<요약>>
  *  n은 2(Binary), 8(Octal), 16(Hex)가 가능하다.
  *  n진법 문자열 -> 10진법 정수값 변환 : Integer.parseInt(문자열, n)
- *  10진법 정수값 -> n진법 문자열 : Integer.toBinaryString 메소드, toHexString 메소드
+ *  10진법 정수값 -> n진법 문자열 : Integer.toBinaryString 메소드, toOctalString 메소드, toHexString 메소드
  *  
  *  format에서 %d는 10진수, %x는 16진수, %o는 8진수, 2진수는 포맷 형식이 없다.
  *  
